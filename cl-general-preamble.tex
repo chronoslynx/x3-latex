@@ -1,0 +1,46 @@
+%
+% This file contains preamble settings and packages that are used by in
+% all cl-templates
+%
+
+% We need this to detect whether or not we're running XeTeX
+\usepackage{ifxetex}
+
+% Use UTF-8. XeTeX expects stuff to be in UTF-8, and it
+% doesn't like the package to be included.
+\ifxetex
+	\relax
+\else
+	\usepackage[utf8]{inputenc}
+\fi
+
+% Utility stuff, used, for example, in x3-mmd-compat
+% That is why we need to include it here, and not in -begin
+\usepackage{etoolbox}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[hyperfootnotes=false, pdfborder={0 0 0},colorlinks=true]{hyperref} %colorlinks=false
+\usepackage{bookmark}
+
+
+% Make it possible to enable or disable TOC
+\newif\ifShowTOC
+
+\newif\ifNoTitlePage
+
+% Make it possible to enable or disable bibliography
+\newif\ifShowBib
+
+% Make it possible to enable or disable Tikz
+\newif\ifUseTikz
+
+% Use Helvetica switch
+\newif\ifUseHelvetica
+
+% XeLaTex Helvetica Neue Switch
+% If you're not using XeTeX, it will just use the regular
+% helvetica package.
+\newif\ifUseHelveticaNeue
+
+% Enable minted (requires -shell-escape option)
+\newif\ifUseMinted

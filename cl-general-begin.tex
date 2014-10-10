@@ -1,0 +1,95 @@
+
+% ================
+% Generic packages
+% ================
+
+\usepackage{tabularx}
+\usepackage{cleveref}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage[hypcap]{caption}
+\usepackage{enumerate}
+
+\usepackage{float}      % For some reason, figures refuse to show if this package
+                        % isn't included.
+\usepackage{subfig}
+
+\usepackage{eurosym}    % The Euro-Symbol (€) for TeX
+\usepackage{gensymb}    % Some convenience symbols like \degree
+\usepackage{todonotes}  % Todo-notes using \todo
+\usepackage{amsmath}    % Additional math symbols
+\usepackage{bm}
+
+
+
+% ================
+% Language related
+% ================
+
+\usepackage[english]{babel}
+\providecommand*{\listingautorefname}{Listing}
+
+
+
+% =============
+% Fonts related
+% =============
+
+% If using XeTeX, use more awesome fonts.
+\ifxetex
+    \input{x3-general-xetex}
+\else
+    \ifUseHelveticaNeue
+        \UseHelveticatrue
+    \fi
+\fi
+% Contains layout options common to all cl-latex templates
+
+\usepackage{parskip}
+\setlength{\parindent}{0cm} % Par-indent is horrible x.x
+\usepackage{perpage}
+
+\usepackage{placeins}
+
+\MakePerPage{footnote}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+%
+\microtypecontext{spacing=nonfrench}
+\SetExtraKerning[unit=space]
+    {encoding={*}, family={bch}, series={*}, size={footnotesize,small,normalsize}}
+    {\textendash={400,400}, % en-dash, add more space around it
+     "28={ ,150}, % left bracket, add space from right
+     "29={150, }, % right bracket, add space from left
+     \textquotedblleft={ ,150}, % left quotation mark, space from right
+     \textquotedblright={150, }} % right quotation mark, space from left
+%\SetExtraKerning[unit=space]
+%   {encoding={*}, family={phv}, series={b}, size={large,Large}}
+%   {1={-200,-200},
+%    \textendash={400,400}}
+
+\ifUseHelvetica
+    \usepackage{helvet}
+    \renewcommand{\familydefault}{\sfdefault}
+\else
+    \usepackage{kpfonts}    % Kepler fonts for Math
+    \usepackage[T1]{fontenc}
+\fi
+
+\newif\ifCoverPage
+
+
+% =============
+% Code listings
+% =============
+
+\usepackage{listings}
+\ifUseMinted % Minted uses Pygments for highlighting
+    \usepackage{minted}
+\fi
+
+% ==========================
+% Load common layout options
+% ==========================
+
+\input{cl-general-layout}
+
